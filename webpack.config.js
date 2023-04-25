@@ -30,19 +30,19 @@ module.exports = (_, argv) => ({
     new ModuleFederationPlugin({
       name: "mf_lib_poc",
       filename: "remoteEntry.js",
-      remotes: {},
+      remotes: {
+        "mf-lib-poc-remote": "mf_lib_poc@http://localhost:8081/remoteEntry.js",
+      },
       exposes: {
         "./Header": "./src/components/Header.tsx",
       },
       shared: {
         ...deps,
         react: {
-          eager: true,
           singleton: true,
           requiredVersion: deps.react,
         },
         "react-dom": {
-          eager: true,
           singleton: true,
           requiredVersion: deps["react-dom"],
         },

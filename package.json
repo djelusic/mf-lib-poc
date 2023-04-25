@@ -1,13 +1,14 @@
 {
   "name": "mf-lib-poc",
-  "version": "1.0.2",
-  "main": "dist/index.js",
+  "version": "1.0.3",
+  "main": "build/index.js",
   "scripts": {
-    "build": "tsc && webpack --mode development",
-    "start": "cd dist && PORT=8081 npx serve"
+    "build": "tsc && babel --extensions .ts,.tsx src --out-dir build",
+    "start": "webpack --mode development && cd dist && PORT=8081 npx serve"
   },
   "license": "MIT",
   "devDependencies": {
+    "@babel/cli": "^7.21.0",
     "@babel/core": "^7.15.8",
     "@babel/plugin-transform-runtime": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
