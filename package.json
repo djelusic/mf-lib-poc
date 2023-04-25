@@ -1,6 +1,6 @@
 {
   "name": "mf-lib-poc",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "main": "build/index.js",
   "scripts": {
     "build": "tsc && babel --extensions .ts,.tsx src --out-dir build",
